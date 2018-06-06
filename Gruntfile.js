@@ -13,16 +13,16 @@ var plugin_args = {
 	exclude      : [ // excluded files and directory from parsing
 		'vendor/' // composer libs vendor dir
 	],
-	main_file    : 'init.php', // plugin main file ( with plugin description comment doc )
+	main_file    : 'simple-crm.php', // plugin main file ( with plugin description comment doc )
 	watch_files  : {
 		assets : [
 			'assets/src/css/**/*.css',
 			'assets/src/css/**/*.scss',
 			'assets/src/js/**/*.js'
 		],
-		potfile: [ './**/*.php' ]
+		potfile: [ '**/*.php' ]
 	},
-	author       : 'Nabeel Molham <n.molham@gmail.com>'
+	author       : 'Elegant Themes <support@elegantthemes.com>'
 };
 
 /**

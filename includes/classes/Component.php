@@ -1,12 +1,12 @@
-<?php namespace WP_Plugins\Boilerplate;
+<?php namespace Simple_CRM;
 
 /**
  * Base Component
  *
- * @package WP_Plugins\Boilerplate
+ * @package Simple_CRM
  */
-class Component extends Singular
-{
+class Component extends Singular {
+
 	/**
 	 * Plugin Main Component
 	 *
@@ -19,9 +19,10 @@ class Component extends Singular
 	 *
 	 * @return void
 	 */
-	protected function init()
-	{
+	protected function init() {
+
 		// vars
 		$this->plugin = Plugin::get_instance();
+		
 	}
 }

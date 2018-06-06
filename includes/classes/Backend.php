@@ -1,19 +1,20 @@
-<?php namespace WP_Plugins\Boilerplate;
+<?php namespace Simple_CRM;
 
 /**
  * Backend logic
  *
- * @package WP_Plugins\Boilerplate
+ * @package Simple_CRM
  */
-class Backend extends Component
-{
+class Backend extends Component {
+
 	/**
 	 * Constructor
 	 *
 	 * @return void
 	 */
-	protected function init()
-	{
+	protected function init() {
+
 		parent::init();
+		
 	}
 }

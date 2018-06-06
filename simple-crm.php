@@ -1,18 +1,17 @@
-<?php namespace WP_Plugins\Boilerplate;
+<?php namespace Simple_CRM;
 
 /**
- * Plugin Name: WP Plugins Boilerplate
- * Description: Plugin Description
+ * Plugin Name: Simple CRM
+ * Description: A simple CRM system with simple leads form
  * Version: 1.0.0
- * Author: Nabeel Molham
- * Author URI: http://nabeel.molham.me/
- * Text Domain: wp-plugin-domain
+ * Author: Elegant Themes
+ * Author URI: https://www.elegantthemes.com/
+ * Text Domain: simple-crm
  * Domain Path: /languages
  * License: GNU General Public License, version 3, http://www.gnu.org/licenses/gpl-3.0.en.html
  */
 
-if ( !defined( 'WPINC' ) )
-{
+if ( ! defined( 'WPINC' ) ) {
 	// Exit if accessed directly
 	die();
 }
@@ -22,28 +21,28 @@ if ( !defined( 'WPINC' ) )
  */
 
 // plugin master file
-define( 'WPPB_MAIN_FILE', __FILE__ );
+define( 'SCRM_MAIN_FILE', __FILE__ );
 
 // plugin DIR
-define( 'WPPB_DIR', plugin_dir_path( WPPB_MAIN_FILE ) );
+define( 'SCRM_DIR', plugin_dir_path( SCRM_MAIN_FILE ) );
 
 // plugin URI
-define( 'WPPB_URI', plugin_dir_url( WPPB_MAIN_FILE ) );
+define( 'SCRM_URI', plugin_dir_url( SCRM_MAIN_FILE ) );
 
 // localization text Domain
-define( 'WPPB_DOMAIN', 'wp-plugin-domain' );
+define( 'SCRM_DOMAIN', 'simple-crm' );
 
-require_once WPPB_DIR . 'includes/classes/Singular.php';
-require_once WPPB_DIR . 'includes/helpers.php';
-require_once WPPB_DIR . 'includes/functions.php';
+require_once SCRM_DIR . 'includes/classes/Singular.php';
+require_once SCRM_DIR . 'includes/helpers.php';
+require_once SCRM_DIR . 'includes/functions.php';
 
 /**
  * Plugin main component
  *
- * @package WP_Plugins\Boilerplate
+ * @package Simple_CRM
  */
-class Plugin extends Singular
-{
+class Plugin extends Singular {
+
 	/**
 	 * Plugin version
 	 *
@@ -73,19 +72,12 @@ class Plugin extends Singular
 	public $ajax;
 
 	/**
-	 * ACF Pro Loader
-	 *
-	 * @var ACF_Pro_Loader
-	 */
-	public $acf;
-
-	/**
 	 * Initialization
 	 *
 	 * @return void
 	 */
-	protected function init()
-	{
+	protected function init() {
+
 		// load language files
 		add_action( 'plugins_loaded', [ &$this, 'load_language' ] );
 
@@ -93,13 +85,13 @@ class Plugin extends Singular
 		spl_autoload_register( [ &$this, 'autoloader' ] );
 
 		// modules
-		$this->acf      = ACF_Pro_Loader::get_instance();
 		$this->ajax     = Ajax_Handler::get_instance();
 		$this->backend  = Backend::get_instance();
 		$this->frontend = Frontend::get_instance();
 
 		// plugin loaded hook
-		do_action_ref_array( 'wppb_loaded', [ &$this ] );
+		do_action_ref_array( 'scrm_loaded', [ &$this ] );
+		
 	}
 
 	/**
@@ -110,22 +102,20 @@ class Plugin extends Singular
 	 *
 	 * @return void
 	 */
-	public function load_view( $view_name, $args = null )
-	{
+	public function load_view( $view_name, $args = null ) {
+
 		// build view file path
 		$__view_name     = $view_name;
-		$__template_path = WPPB_DIR . 'views/' . $__view_name . '.php';
-		if ( !file_exists( $__template_path ) )
-		{
+		$__template_path = SCRM_DIR . 'views/' . $__view_name . '.php';
+		if ( ! file_exists( $__template_path ) ) {
 			// file not found!
-			wp_die( sprintf( __( 'Template <code>%s</code> File not found, calculated path: <code>%s</code>', WPPB_DOMAIN ), $__view_name, $__template_path ) );
+			wp_die( sprintf( __( 'Template <code>%s</code> File not found, calculated path: <code>%s</code>', SCRM_DOMAIN ), $__view_name, $__template_path ) );
 		}
 
 		// clear vars
 		unset( $view_name );
 
-		if ( !empty( $args ) )
-		{
+		if ( ! empty( $args ) ) {
 			// extract passed args into variables
 			extract( $args, EXTR_OVERWRITE );
 		}
@@ -136,7 +126,7 @@ class Plugin extends Singular
 		 * @param string $__template_path
 		 * @param string $__view_name
 		 */
-		do_action_ref_array( 'wppb_load_template_before', [ &$__template_path, $__view_name, $args ] );
+		do_action_ref_array( 'scrm_load_template_before', [ &$__template_path, $__view_name, $args ] );
 
 		/**
 		 * Loading template file path filter
@@ -146,7 +136,7 @@ class Plugin extends Singular
 		 *
 		 * @return string
 		 */
-		require apply_filters( 'wppb_load_template_path', $__template_path, $__view_name, $args );
+		require apply_filters( 'scrm_load_template_path', $__template_path, $__view_name, $args );
 
 		/**
 		 * After loading template hook
@@ -154,7 +144,8 @@ class Plugin extends Singular
 		 * @param string $__template_path
 		 * @param string $__view_name
 		 */
-		do_action( 'wppb_load_template_after', $__template_path, $__view_name, $args );
+		do_action( 'scrm_load_template_after', $__template_path, $__view_name, $args );
+		
 	}
 
 	/**
@@ -162,9 +153,10 @@ class Plugin extends Singular
 	 *
 	 * @return void
 	 */
-	public function load_language()
-	{
-		load_plugin_textdomain( WPPB_DOMAIN, false, dirname( plugin_basename( WPPB_MAIN_FILE ) ) . '/languages' );
+	public function load_language() {
+
+		load_plugin_textdomain( SCRM_DOMAIN, false, dirname( plugin_basename( SCRM_MAIN_FILE ) ) . '/languages' );
+		
 	}
 
 	/**
@@ -174,26 +166,25 @@ class Plugin extends Singular
 	 *
 	 * @return void
 	 */
-	public function autoloader( $class_name )
-	{
-		if ( strpos( $class_name, __NAMESPACE__ ) === false )
-		{
+	public function autoloader( $class_name ) {
+
+		if ( strpos( $class_name, __NAMESPACE__ ) === false ) {
 			// skip non related classes
 			return;
 		}
 
-		$class_path = WPPB_DIR . 'includes' . DIRECTORY_SEPARATOR . 'classes' . str_replace( [
+		$class_path = SCRM_DIR . 'includes' . DIRECTORY_SEPARATOR . 'classes' . str_replace( [
 				__NAMESPACE__,
 				'\\',
 			], [ '', DIRECTORY_SEPARATOR ], $class_name ) . '.php';
 
-		if ( file_exists( $class_path ) )
-		{
+		if ( file_exists( $class_path ) ) {
 			// load class file if found
 			require_once $class_path;
 		}
+		
 	}
 }
 
 // boot up the system
-wp_plugin_boilerplate();
+simple_crm();
