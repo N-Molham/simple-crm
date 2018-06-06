@@ -269,7 +269,7 @@ final class Helpers {
 	public static function sanitize_text_field_with_linebreaks( $string ) {
 
 		$filtered = _sanitize_text_fields( $string, true );
-
+		
 		/**
 		 * Filter a sanitized text field string.
 		 *

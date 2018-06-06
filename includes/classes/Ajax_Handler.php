@@ -94,7 +94,15 @@ class Ajax_Handler extends Component {
 
 		}
 
-		$this->debug( $customer_info );
+		$customer_id = $this->plugin->customers->save_customer_information( $customer_info );
+
+		if ( is_wp_error( $customer_id ) ) {
+
+			$this->error( $customer_id->get_error_message() );
+
+		}
+
+		$this->success( __( 'Thanks for contacting us, your information received and will get back to you soon.' ) );
 
 	}
 

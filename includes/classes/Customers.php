@@ -245,6 +245,49 @@ class Customers extends Component {
 	}
 
 	/**
+	 * @param array $customer_info
+	 *
+	 * @return int|\WP_Error Customer Post ID
+	 */
+	public function save_customer_information( $customer_info ) {
+
+		$post_attributes = [
+			'post_type'   => 'scrm-customer',
+			'post_date'   => $customer_info['datetime'],
+			'post_status' => 'publish',
+		];
+
+		$post_fields = array_filter( $this->get_fields(), function ( $field_args ) {
+
+			return 0 !== strpos( $field_args['field'], '_' );
+
+		} );
+
+		foreach ( $post_fields as $field_name => $field_args ) {
+
+			if ( isset( $customer_info[ $field_name ] ) ) {
+
+				$post_attributes[ $field_args['field'] ] = $customer_info[ $field_name ];
+
+			}
+
+		}
+
+		$post_id = wp_insert_post( $post_attributes, true );
+
+		if ( is_wp_error( $post_id ) ) {
+
+			return $post_id;
+
+		}
+
+		$this->save_meta_data( $customer_info, $post_id );
+
+		return $post_id;
+
+	}
+
+	/**
 	 * @param array $info
 	 * @param int   $customer_id
 	 *
@@ -258,7 +301,7 @@ class Customers extends Component {
 
 		}
 
-		$fields = $this->get_fields();
+		$fields = $this->get_fields( true );
 
 		foreach ( $info as $info_name => $info_value ) {
 

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple CRM 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simple-crm\n"
-"POT-Creation-Date: 2018-06-06 18:59:08+00:00\n"
+"POT-Creation-Date: 2018-06-06 19:27:48+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -40,7 +40,13 @@ msgstr ""
 msgid "%s has invalid value!"
 msgstr ""
 
-#: includes/classes/Backend.php:67
+#: includes/classes/Ajax_Handler.php:105
+msgid ""
+"Thanks for contacting us, your information received and will get back to "
+"you soon."
+msgstr ""
+
+#: includes/classes/Backend.php:73
 msgid "Customer Information"
 msgstr ""
 

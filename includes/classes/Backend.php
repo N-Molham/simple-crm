@@ -33,6 +33,12 @@ class Backend extends Component {
 	 */
 	public function save_customer_information( $post_id ) {
 
+		if ( defined( 'DOING_AJAX' ) && DOING_AJAX && 'submit_customer' === filter_input( INPUT_POST, 'action', FILTER_SANITIZE_STRING ) ) {
+
+			return;
+
+		}
+
 		$customer_fields = array_keys( $this->plugin->customers->get_fields( true ) );
 		$customer_info   = [];
 
