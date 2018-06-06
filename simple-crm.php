@@ -72,6 +72,13 @@ class Plugin extends Singular {
 	public $ajax;
 
 	/**
+	 * Customers
+	 *
+	 * @var Customers
+	 */
+	public $customers;
+
+	/**
 	 * Initialization
 	 *
 	 * @return void
@@ -79,19 +86,20 @@ class Plugin extends Singular {
 	protected function init() {
 
 		// load language files
-		add_action( 'plugins_loaded', [ &$this, 'load_language' ] );
+		add_action( 'plugins_loaded', [ $this, 'load_language' ] );
 
 		// autoloader register
-		spl_autoload_register( [ &$this, 'autoloader' ] );
+		spl_autoload_register( [ $this, 'autoloader' ] );
 
 		// modules
-		$this->ajax     = Ajax_Handler::get_instance();
-		$this->backend  = Backend::get_instance();
-		$this->frontend = Frontend::get_instance();
+		$this->ajax      = Ajax_Handler::get_instance();
+		$this->customers = Customers::get_instance();
+		$this->backend   = Backend::get_instance();
+		$this->frontend  = Frontend::get_instance();
 
 		// plugin loaded hook
-		do_action_ref_array( 'scrm_loaded', [ &$this ] );
-		
+		do_action_ref_array( 'scrm_loaded', [ $this ] );
+
 	}
 
 	/**
@@ -145,7 +153,7 @@ class Plugin extends Singular {
 		 * @param string $__view_name
 		 */
 		do_action( 'scrm_load_template_after', $__template_path, $__view_name, $args );
-		
+
 	}
 
 	/**
@@ -156,7 +164,7 @@ class Plugin extends Singular {
 	public function load_language() {
 
 		load_plugin_textdomain( SCRM_DOMAIN, false, dirname( plugin_basename( SCRM_MAIN_FILE ) ) . '/languages' );
-		
+
 	}
 
 	/**
@@ -182,7 +190,7 @@ class Plugin extends Singular {
 			// load class file if found
 			require_once $class_path;
 		}
-		
+
 	}
 }
 

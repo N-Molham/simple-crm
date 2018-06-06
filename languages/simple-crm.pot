@@ -1,0 +1,238 @@
+# Copyright (C) 2018 Elegant Themes
+# This file is distributed under the GNU General Public License, version 3, http://www.gnu.org/licenses/gpl-3.0.en.html.
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple CRM 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simple-crm\n"
+"POT-Creation-Date: 2018-06-06 14:34:31+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: Elegant Themes <support@elegantthemes.com>\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+
+#: includes/classes/Customers.php:45 includes/classes/Customers.php:48
+#: includes/classes/Customers.php:50
+msgid "Customer"
+msgstr ""
+
+#: includes/classes/Customers.php:47 includes/classes/Customers.php:49
+msgid "Customers"
+msgstr ""
+
+#: includes/classes/Customers.php:51
+msgid "Customer Archives"
+msgstr ""
+
+#: includes/classes/Customers.php:52
+msgid "Customer Attributes"
+msgstr ""
+
+#: includes/classes/Customers.php:53
+msgid "Parent Customer:"
+msgstr ""
+
+#: includes/classes/Customers.php:54
+msgid "All Customers"
+msgstr ""
+
+#: includes/classes/Customers.php:55
+msgid "Add New Customer"
+msgstr ""
+
+#: includes/classes/Customers.php:56
+msgid "Add New"
+msgstr ""
+
+#: includes/classes/Customers.php:57
+msgid "New Customer"
+msgstr ""
+
+#: includes/classes/Customers.php:58
+msgid "Edit Customer"
+msgstr ""
+
+#: includes/classes/Customers.php:59
+msgid "Update Customer"
+msgstr ""
+
+#: includes/classes/Customers.php:60
+msgid "View Customer"
+msgstr ""
+
+#: includes/classes/Customers.php:61
+msgid "View Customers"
+msgstr ""
+
+#: includes/classes/Customers.php:62
+msgid "Search Customer"
+msgstr ""
+
+#: includes/classes/Customers.php:63
+msgid "Not found"
+msgstr ""
+
+#: includes/classes/Customers.php:64
+msgid "Not found in Trash"
+msgstr ""
+
+#: includes/classes/Customers.php:65
+msgid "Featured Image"
+msgstr ""
+
+#: includes/classes/Customers.php:66
+msgid "Set featured image"
+msgstr ""
+
+#: includes/classes/Customers.php:67
+msgid "Remove featured image"
+msgstr ""
+
+#: includes/classes/Customers.php:68
+msgid "Use as featured image"
+msgstr ""
+
+#: includes/classes/Customers.php:69
+msgid "Insert into Customer"
+msgstr ""
+
+#: includes/classes/Customers.php:70
+msgid "Uploaded to this Customer"
+msgstr ""
+
+#: includes/classes/Customers.php:71
+msgid "Customers list"
+msgstr ""
+
+#: includes/classes/Customers.php:72
+msgid "Customers list navigation"
+msgstr ""
+
+#: includes/classes/Customers.php:73
+msgid "Filter Customers list"
+msgstr ""
+
+#: includes/classes/Customers.php:106
+msgid "Search Tags"
+msgstr ""
+
+#: includes/classes/Customers.php:107
+msgid "All Tags"
+msgstr ""
+
+#: includes/classes/Customers.php:108
+msgid "Parent Tag"
+msgstr ""
+
+#: includes/classes/Customers.php:109
+msgid "Parent Tag:"
+msgstr ""
+
+#: includes/classes/Customers.php:110
+msgid "Edit Tag"
+msgstr ""
+
+#: includes/classes/Customers.php:111
+msgid "Update Tag"
+msgstr ""
+
+#: includes/classes/Customers.php:112
+msgid "Add New Tag"
+msgstr ""
+
+#: includes/classes/Customers.php:113
+msgid "New Tag Name"
+msgstr ""
+
+#: includes/classes/Customers.php:114
+msgid "Tag"
+msgstr ""
+
+#: includes/classes/Customers.php:141
+msgid "Search Categories"
+msgstr ""
+
+#: includes/classes/Customers.php:142
+msgid "All Categories"
+msgstr ""
+
+#: includes/classes/Customers.php:143
+msgid "Parent Category"
+msgstr ""
+
+#: includes/classes/Customers.php:144
+msgid "Parent Category:"
+msgstr ""
+
+#: includes/classes/Customers.php:145
+msgid "Edit Category"
+msgstr ""
+
+#: includes/classes/Customers.php:146
+msgid "Update Category"
+msgstr ""
+
+#: includes/classes/Customers.php:147
+msgid "Add New Category"
+msgstr ""
+
+#: includes/classes/Customers.php:148
+msgid "New Category Name"
+msgstr ""
+
+#: includes/classes/Customers.php:149
+msgid "Category"
+msgstr ""
+
+#: simple-crm.php:120
+msgid "Template <code>%s</code> File not found, calculated path: <code>%s</code>"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Simple CRM"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "A simple CRM system with simple leads form"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Elegant Themes"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.elegantthemes.com/"
+msgstr ""
+
+#: includes/classes/Customers.php:104
+msgctxt "taxonomy general name"
+msgid "Tags"
+msgstr ""
+
+#: includes/classes/Customers.php:139
+msgctxt "taxonomy general name"
+msgid "Categories"
+msgstr ""
+
+#: includes/classes/Customers.php:105
+msgctxt "taxonomy singular name"
+msgid "Tag"
+msgstr ""
+
+#: includes/classes/Customers.php:140
+msgctxt "taxonomy singular name"
+msgid "Category"
+msgstr ""
