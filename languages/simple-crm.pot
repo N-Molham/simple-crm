@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple CRM 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simple-crm\n"
-"POT-Creation-Date: 2018-06-06 15:52:43+00:00\n"
+"POT-Creation-Date: 2018-06-06 16:20:01+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -133,91 +133,91 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: includes/classes/Customers.php:118
+#: includes/classes/Customers.php:119
 msgid "Phone Number"
 msgstr ""
 
-#: includes/classes/Customers.php:124
+#: includes/classes/Customers.php:126
 msgid "Email Address"
 msgstr ""
 
-#: includes/classes/Customers.php:130
+#: includes/classes/Customers.php:133
 msgid "Desired Budget"
 msgstr ""
 
-#: includes/classes/Customers.php:135
+#: includes/classes/Customers.php:139
 msgid "Message"
 msgstr ""
 
-#: includes/classes/Customers.php:167
+#: includes/classes/Customers.php:171
 msgid "Search Tags"
 msgstr ""
 
-#: includes/classes/Customers.php:168
+#: includes/classes/Customers.php:172
 msgid "All Tags"
 msgstr ""
 
-#: includes/classes/Customers.php:169
+#: includes/classes/Customers.php:173
 msgid "Parent Tag"
 msgstr ""
 
-#: includes/classes/Customers.php:170
+#: includes/classes/Customers.php:174
 msgid "Parent Tag:"
 msgstr ""
 
-#: includes/classes/Customers.php:171
+#: includes/classes/Customers.php:175
 msgid "Edit Tag"
 msgstr ""
 
-#: includes/classes/Customers.php:172
+#: includes/classes/Customers.php:176
 msgid "Update Tag"
 msgstr ""
 
-#: includes/classes/Customers.php:173
+#: includes/classes/Customers.php:177
 msgid "Add New Tag"
 msgstr ""
 
-#: includes/classes/Customers.php:174
+#: includes/classes/Customers.php:178
 msgid "New Tag Name"
 msgstr ""
 
-#: includes/classes/Customers.php:175
+#: includes/classes/Customers.php:179
 msgid "Tag"
 msgstr ""
 
-#: includes/classes/Customers.php:202
+#: includes/classes/Customers.php:206
 msgid "Search Categories"
 msgstr ""
 
-#: includes/classes/Customers.php:203
+#: includes/classes/Customers.php:207
 msgid "All Categories"
 msgstr ""
 
-#: includes/classes/Customers.php:204
+#: includes/classes/Customers.php:208
 msgid "Parent Category"
 msgstr ""
 
-#: includes/classes/Customers.php:205
+#: includes/classes/Customers.php:209
 msgid "Parent Category:"
 msgstr ""
 
-#: includes/classes/Customers.php:206
+#: includes/classes/Customers.php:210
 msgid "Edit Category"
 msgstr ""
 
-#: includes/classes/Customers.php:207
+#: includes/classes/Customers.php:211
 msgid "Update Category"
 msgstr ""
 
-#: includes/classes/Customers.php:208
+#: includes/classes/Customers.php:212
 msgid "Add New Category"
 msgstr ""
 
-#: includes/classes/Customers.php:209
+#: includes/classes/Customers.php:213
 msgid "New Category Name"
 msgstr ""
 
-#: includes/classes/Customers.php:210
+#: includes/classes/Customers.php:214
 msgid "Category"
 msgstr ""
 
@@ -241,22 +241,22 @@ msgstr ""
 msgid "https://www.elegantthemes.com/"
 msgstr ""
 
-#: includes/classes/Customers.php:165
+#: includes/classes/Customers.php:169
 msgctxt "taxonomy general name"
 msgid "Tags"
 msgstr ""
 
-#: includes/classes/Customers.php:200
+#: includes/classes/Customers.php:204
 msgctxt "taxonomy general name"
 msgid "Categories"
 msgstr ""
 
-#: includes/classes/Customers.php:166
+#: includes/classes/Customers.php:170
 msgctxt "taxonomy singular name"
 msgid "Tag"
 msgstr ""
 
-#: includes/classes/Customers.php:201
+#: includes/classes/Customers.php:205
 msgctxt "taxonomy singular name"
 msgid "Category"
 msgstr ""
