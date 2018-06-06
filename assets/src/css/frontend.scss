@@ -4,14 +4,46 @@
 @import "utils";
 @import "flex";
 
-body.home {
-	.plugin-class {
-		display: inline-block;
-		margin-bottom: 10px;
-		outline: 1px solid red;
+form.simple-crm-form {
+	margin-bottom: 1em;
+
+	.field-wrapper label {
+		color: #333;
+		display: block;
+		margin-bottom: 0.5em;
 	}
 
-	&.has-sidebar {
-		display: block;
+	.field-wrapper {
+		input[type="text"],
+		input[type="email"],
+		input[type="url"],
+		input[type="number"],
+		input[type="tel"],
+		input[type="range"],
+		input[type="date"],
+		textarea {
+			display: block;
+			padding: 0.7em;
+			width: 100%;
+			background: #fff;
+			color: #666;
+			border: 1px solid #bbb;
+			@include border-radius(3px);
+		}
+	}
+
+	.field-wrapper p {
+		margin-bottom: 1.5em;
+	}
+
+	.field-wrapper textarea {
+		width: auto;
+	}
+
+	@include respond-to('small') {
+		.field-wrapper textarea {
+			width: 100%;
+		}
 	}
 }
+

@@ -114,6 +114,7 @@ class Customers extends Component {
 					'field'    => 'post_title',
 					'length'   => 240,
 					'sanitize' => 'sanitize_text_field',
+					'type'     => 'text',
 				],
 				'phone'   => [
 					'label'    => __( 'Phone Number', SCRM_DOMAIN ),
@@ -121,6 +122,7 @@ class Customers extends Component {
 					'length'   => 30,
 					'sanitize' => 'sanitize_text_field',
 					'validate' => [ $this, 'sanitize_phone_number' ],
+					'type'     => 'text',
 				],
 				'email'   => [
 					'label'    => __( 'Email Address', SCRM_DOMAIN ),
@@ -128,18 +130,21 @@ class Customers extends Component {
 					'sanitize' => 'sanitize_email',
 					'validate' => 'is_email',
 					'length'   => 200,
+					'type'     => 'email',
 				],
 				'budget'  => [
 					'label'    => __( 'Desired Budget', SCRM_DOMAIN ),
 					'field'    => '_budget',
 					'length'   => 10,
 					'sanitize' => 'absint',
+					'type'     => 'number',
 				],
 				'message' => [
 					'label'    => __( 'Message', SCRM_DOMAIN ),
 					'field'    => 'post_content',
 					'length'   => 500,
 					'sanitize' => '\Simple_CRM\Helpers::sanitize_text_field_with_linebreaks',
+					'type'     => 'textarea',
 				],
 			] );
 

@@ -45,9 +45,32 @@ class Frontend extends Component {
 
 		}
 
+		$this->load_assets();
+
 		$attributes = shortcode_atts( $default_attributes, $attributes, 'simple-crm-form' );
 
-		return 'form';
+		$form_hash = md5( json_encode( $attributes ) );
+
+		delete_transient( 'scrm_attrs_' . $form_hash );
+
+		set_transient( 'scrm_attrs_' . $form_hash, $attributes, DAY_IN_SECONDS );
+
+		return scrm_view( 'forms/customer', compact( 'attributes', 'customer_fields', 'form_hash' ), true );
+
+	}
+
+	/**
+	 * @return void
+	 */
+	public function load_assets() {
+
+		wp_enqueue_style( 'scrm-form', untrailingslashit( SCRM_URI ) . '/assets/dist/css/frontend.css', null, Helpers::assets_version() );
+
+		wp_enqueue_script( 'scrm-form', Helpers::enqueue_path() . 'js/form.js', [ 'jquery' ], Helpers::assets_version(), true );
+
+		wp_localize_script( 'scrm-form', 'scrm_form', [
+			'ajax_url' => admin_url( 'admin-ajax.php', is_ssl() ? 'https' : 'http' ),
+		] );
 
 	}
 
