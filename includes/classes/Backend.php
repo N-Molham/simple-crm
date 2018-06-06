@@ -42,7 +42,7 @@ class Backend extends Component {
 
 		}
 
-		$this->plugin->customers->save_information( $customer_info, $post_id );
+		$this->plugin->customers->save_meta_data( $customer_info, $post_id );
 
 	}
 

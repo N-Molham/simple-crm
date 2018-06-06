@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple CRM 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simple-crm\n"
-"POT-Creation-Date: 2018-06-06 18:08:46+00:00\n"
+"POT-Creation-Date: 2018-06-06 18:59:08+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,6 +23,22 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
+
+#: includes/classes/Ajax_Handler.php:49
+msgid "Invalid form submission"
+msgstr ""
+
+#: includes/classes/Ajax_Handler.php:73
+msgid "%s maximum allow length is %d"
+msgstr ""
+
+#: includes/classes/Ajax_Handler.php:83
+msgid "%s error: %s"
+msgstr ""
+
+#: includes/classes/Ajax_Handler.php:89
+msgid "%s has invalid value!"
+msgstr ""
 
 #: includes/classes/Backend.php:67
 msgid "Customer Information"
@@ -137,87 +153,87 @@ msgstr ""
 msgid "Phone Number"
 msgstr ""
 
-#: includes/classes/Customers.php:128
+#: includes/classes/Customers.php:127
 msgid "Email Address"
 msgstr ""
 
-#: includes/classes/Customers.php:136
+#: includes/classes/Customers.php:135
 msgid "Desired Budget"
 msgstr ""
 
-#: includes/classes/Customers.php:143
+#: includes/classes/Customers.php:142
 msgid "Message"
 msgstr ""
 
-#: includes/classes/Customers.php:176
+#: includes/classes/Customers.php:186
 msgid "Search Tags"
 msgstr ""
 
-#: includes/classes/Customers.php:177
+#: includes/classes/Customers.php:187
 msgid "All Tags"
 msgstr ""
 
-#: includes/classes/Customers.php:178
+#: includes/classes/Customers.php:188
 msgid "Parent Tag"
 msgstr ""
 
-#: includes/classes/Customers.php:179
+#: includes/classes/Customers.php:189
 msgid "Parent Tag:"
 msgstr ""
 
-#: includes/classes/Customers.php:180
+#: includes/classes/Customers.php:190
 msgid "Edit Tag"
 msgstr ""
 
-#: includes/classes/Customers.php:181
+#: includes/classes/Customers.php:191
 msgid "Update Tag"
 msgstr ""
 
-#: includes/classes/Customers.php:182
+#: includes/classes/Customers.php:192
 msgid "Add New Tag"
 msgstr ""
 
-#: includes/classes/Customers.php:183
+#: includes/classes/Customers.php:193
 msgid "New Tag Name"
 msgstr ""
 
-#: includes/classes/Customers.php:184
+#: includes/classes/Customers.php:194
 msgid "Tag"
 msgstr ""
 
-#: includes/classes/Customers.php:211
+#: includes/classes/Customers.php:221
 msgid "Search Categories"
 msgstr ""
 
-#: includes/classes/Customers.php:212
+#: includes/classes/Customers.php:222
 msgid "All Categories"
 msgstr ""
 
-#: includes/classes/Customers.php:213
+#: includes/classes/Customers.php:223
 msgid "Parent Category"
 msgstr ""
 
-#: includes/classes/Customers.php:214
+#: includes/classes/Customers.php:224
 msgid "Parent Category:"
 msgstr ""
 
-#: includes/classes/Customers.php:215
+#: includes/classes/Customers.php:225
 msgid "Edit Category"
 msgstr ""
 
-#: includes/classes/Customers.php:216
+#: includes/classes/Customers.php:226
 msgid "Update Category"
 msgstr ""
 
-#: includes/classes/Customers.php:217
+#: includes/classes/Customers.php:227
 msgid "Add New Category"
 msgstr ""
 
-#: includes/classes/Customers.php:218
+#: includes/classes/Customers.php:228
 msgid "New Category Name"
 msgstr ""
 
-#: includes/classes/Customers.php:219
+#: includes/classes/Customers.php:229
 msgid "Category"
 msgstr ""
 
@@ -225,11 +241,11 @@ msgstr ""
 msgid "Template <code>%s</code> File not found, calculated path: <code>%s</code>"
 msgstr ""
 
-#: views/forms/customer.php:56
+#: views/forms/customer.php:58
 msgid "Loading..."
 msgstr ""
 
-#: views/forms/customer.php:56
+#: views/forms/customer.php:58
 msgid "Submit"
 msgstr ""
 
@@ -249,22 +265,22 @@ msgstr ""
 msgid "https://www.elegantthemes.com/"
 msgstr ""
 
-#: includes/classes/Customers.php:174
+#: includes/classes/Customers.php:184
 msgctxt "taxonomy general name"
 msgid "Tags"
 msgstr ""
 
-#: includes/classes/Customers.php:209
+#: includes/classes/Customers.php:219
 msgctxt "taxonomy general name"
 msgid "Categories"
 msgstr ""
 
-#: includes/classes/Customers.php:175
+#: includes/classes/Customers.php:185
 msgctxt "taxonomy singular name"
 msgid "Tag"
 msgstr ""
 
-#: includes/classes/Customers.php:210
+#: includes/classes/Customers.php:220
 msgctxt "taxonomy singular name"
 msgid "Category"
 msgstr ""

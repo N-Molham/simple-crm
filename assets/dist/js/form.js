@@ -1,1 +1,1 @@
-!function(a,b,c){b(function(){})}(window,jQuery);
+!function(a,b,c){b(function(){b("body").on("submit","form.simple-crm-form",function(a){a.preventDefault();const c=b(a.currentTarget),d=c.find(".form-actions .button-submit");d.attr("data-submit",d.text()).text(d.attr("data-loading")).prop("disabled",!0),b.post(scrm_form.ajax_url,b(this).serialize(),function(a){a.success&&c.get(0).reset(),alert(a.data)}).always(function(){d.text(d.attr("data-submit")).prop("disabled",!1)})})})}(window,jQuery);

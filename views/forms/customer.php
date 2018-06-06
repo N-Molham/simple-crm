@@ -17,7 +17,9 @@ $form_classes = (array) apply_filters( 'scrm_form_classes', [ 'simple-crm-form',
 		// attributes
 		$input_label           = $attributes[ $field_name . '-label' ];
 		$input_max_length      = $attributes[ $field_name . '-max-length' ];
-		$additional_attributes = [];
+		$additional_attributes = [
+			'required' => 'required',
+		];
 
 		if ( 'message' === $field_name ) {
 
@@ -58,5 +60,6 @@ $form_classes = (array) apply_filters( 'scrm_form_classes', [ 'simple-crm-form',
 
 	<input type="hidden" name="_hash" value="<?php echo esc_attr( $form_hash ); ?>" />
 	<input type="hidden" name="_datetime" value="<?php echo current_time( 'mysql' ); ?>" />
+	<input type="hidden" name="action" value="submit_customer" />
 	<?php wp_nonce_field( 'scrm_submit_customer' ); ?>
 </form>

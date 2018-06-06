@@ -120,8 +120,7 @@ class Customers extends Component {
 					'label'    => __( 'Phone Number', SCRM_DOMAIN ),
 					'field'    => '_phone',
 					'length'   => 30,
-					'sanitize' => 'sanitize_text_field',
-					'validate' => [ $this, 'sanitize_phone_number' ],
+					'sanitize' => [ $this, 'sanitize_phone_number' ],
 					'type'     => 'text',
 				],
 				'email'   => [
@@ -161,6 +160,17 @@ class Customers extends Component {
 		}
 
 		return $this->_fields;
+
+	}
+
+	/**
+	 * @param string $phone_number
+	 *
+	 * @return string
+	 */
+	public function sanitize_phone_number( $phone_number ) {
+
+		return preg_replace( '/[^0-9_\-\(\)\+]/', '', $phone_number );
 
 	}
 
@@ -240,7 +250,7 @@ class Customers extends Component {
 	 *
 	 * @return void
 	 */
-	public function save_information( $info, $customer_id ) {
+	public function save_meta_data( $info, $customer_id ) {
 
 		if ( empty( $customer_id ) || empty( $info ) ) {
 
