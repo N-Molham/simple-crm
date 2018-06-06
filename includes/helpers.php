@@ -262,31 +262,13 @@ final class Helpers {
 	 * @see sanitize_text_field
 	 * @since 2.9.0
 	 *
-	 * @param string $str
+	 * @param string $string
 	 *
 	 * @return string
 	 */
-	public static function sanitize_text_field_with_linebreaks( $str ) {
+	public static function sanitize_text_field_with_linebreaks( $string ) {
 
-		$filtered = wp_check_invalid_utf8( $str );
-
-		if ( strpos( $filtered, '<' ) !== false ) {
-			$filtered = wp_pre_kses_less_than( $filtered );
-
-			// This will strip extra whitespace for us.
-			$filtered = wp_strip_all_tags( $filtered, true );
-		}
-
-		$found = false;
-		while ( preg_match( '/%[a-f0-9]{2}/i', $filtered, $match ) ) {
-			$filtered = str_replace( $match[0], '', $filtered );
-			$found    = true;
-		}
-
-		if ( $found ) {
-			// Strip out the whitespace that may now exist after removing the octets.
-			$filtered = trim( preg_replace( '/ +/', ' ', $filtered ) );
-		}
+		$filtered = _sanitize_text_fields( $string, true );
 
 		/**
 		 * Filter a sanitized text field string.
@@ -294,9 +276,9 @@ final class Helpers {
 		 * @since 2.9.0
 		 *
 		 * @param string $filtered The sanitized string.
-		 * @param string $str The string prior to being sanitized.
+		 * @param string $string The string prior to being sanitized.
 		 */
-		return apply_filters( 'sanitize_text_field_with_linebreaks', $filtered, $str );
+		return apply_filters( 'sanitize_text_field_with_newlines', $filtered, $string );
 
 	}
 

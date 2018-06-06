@@ -8,6 +8,11 @@
 class Customers extends Component {
 
 	/**
+	 * @var array
+	 */
+	protected $_fields;
+
+	/**
 	 * Constructor
 	 *
 	 * @return void
@@ -90,7 +95,63 @@ class Customers extends Component {
 			'capability_type'     => 'post',
 		];
 
-		register_post_type( 'Customer', $args );
+		register_post_type( 'scrm-customer', $args );
+
+	}
+
+	/**
+	 * @param bool $meta_field_only
+	 *
+	 * @return array
+	 */
+	public function get_fields( $meta_field_only = false ) {
+
+		if ( null === $this->_fields ) {
+
+			$this->_fields = apply_filters( 'scrm_customer_fields', [
+				'name'    => [
+					'label'    => __( 'Name', SCRM_DOMAIN ),
+					'field'    => 'post_title',
+					'sanitize' => 'sanitize_text_field',
+				],
+				'phone'   => [
+					'label'    => __( 'Phone Number', SCRM_DOMAIN ),
+					'field'    => '_phone',
+					'sanitize' => 'sanitize_text_field',
+					'validate' => [ $this, 'sanitize_phone_number' ],
+				],
+				'email'   => [
+					'label'    => __( 'Email Address', SCRM_DOMAIN ),
+					'field'    => '_email',
+					'sanitize' => 'sanitize_email',
+					'validate' => 'is_email',
+				],
+				'budget'  => [
+					'label'    => __( 'Desired Budget', SCRM_DOMAIN ),
+					'field'    => '_budget',
+					'sanitize' => 'absint',
+				],
+				'message' => [
+					'label'    => __( 'Message', SCRM_DOMAIN ),
+					'field'    => 'post_content',
+					'sanitize' => '\Simple_CRM\Helpers::sanitize_text_field_with_linebreaks',
+					'validate' => [ $this, 'max_message_length' ],
+				],
+			] );
+
+		}
+
+		if ( $meta_field_only ) {
+
+			return array_filter( $this->_fields, function ( $field_args ) {
+
+				return 0 === strpos( $field_args['field'], '_' );
+
+			} );
+
+		}
+
+		return $this->_fields;
 
 	}
 
@@ -161,6 +222,36 @@ class Customers extends Component {
 		];
 
 		register_taxonomy( 'scrm-category', [ 'scrm-customer' ], $args );
+
+	}
+
+	/**
+	 * @param array $info
+	 * @param int   $customer_id
+	 *
+	 * @return void
+	 */
+	public function save_information( $info, $customer_id ) {
+
+		if ( empty( $customer_id ) || empty( $info ) ) {
+
+			return;
+
+		}
+
+		$fields = $this->get_fields();
+
+		foreach ( $info as $info_name => $info_value ) {
+
+			if ( ! isset( $fields[ $info_name ] ) ) {
+
+				continue;
+
+			}
+
+			update_post_meta( $customer_id, $fields[ $info_name ]['field'], $info_value );
+
+		}
 
 	}
 
