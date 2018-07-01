@@ -1,10 +1,10 @@
-# Copyright (C) 2018 Elegant Themes
+# Copyright (C) 2018 Nabeel Molham
 # This file is distributed under the GNU General Public License, version 3, http://www.gnu.org/licenses/gpl-3.0.en.html.
 msgid ""
 msgstr ""
 "Project-Id-Version: Simple CRM 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simple-crm\n"
-"POT-Creation-Date: 2018-06-06 19:27:48+00:00\n"
+"POT-Creation-Date: 2018-07-01 19:14:56+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -264,11 +264,11 @@ msgid "A simple CRM system with simple leads form"
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Elegant Themes"
+msgid "Nabeel Molham"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://www.elegantthemes.com/"
+msgid "https://nabeel.molham.me"
 msgstr ""
 
 #: includes/classes/Customers.php:184

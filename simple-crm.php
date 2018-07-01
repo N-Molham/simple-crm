@@ -4,8 +4,8 @@
  * Plugin Name: Simple CRM
  * Description: A simple CRM system with simple leads form
  * Version: 1.0.0
- * Author: Elegant Themes
- * Author URI: https://www.elegantthemes.com/
+ * Author: Nabeel Molham
+ * Author URI: https://nabeel.molham.me
  * Text Domain: simple-crm
  * Domain Path: /languages
  * License: GNU General Public License, version 3, http://www.gnu.org/licenses/gpl-3.0.en.html
