@@ -51,7 +51,7 @@ class Ajax_Handler extends Component {
 		}
 
 		$customer_fields = $this->plugin->customers->get_fields();
-
+		
 		foreach ( $customer_fields as $field_name => $field_args ) {
 
 			$customer_info[ $field_name ] = filter_input( INPUT_POST, $field_name, FILTER_SANITIZE_STRING );

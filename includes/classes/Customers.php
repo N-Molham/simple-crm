@@ -100,11 +100,11 @@ class Customers extends Component {
 	}
 
 	/**
-	 * @param bool $meta_field_only
+	 * @param string $field_type
 	 *
 	 * @return array
 	 */
-	public function get_fields( $meta_field_only = false ) {
+	public function get_fields( $field_type = 'all' ) {
 
 		if ( null === $this->_fields ) {
 
@@ -149,11 +149,21 @@ class Customers extends Component {
 
 		}
 
-		if ( $meta_field_only ) {
+		if ( 'meta' === $field_type ) {
 
 			return array_filter( $this->_fields, function ( $field_args ) {
 
 				return 0 === strpos( $field_args['field'], '_' );
+
+			} );
+
+		}
+
+		if ( 'post' === $field_type ) {
+
+			return array_filter( $this->_fields, function ( $field_args ) {
+
+				return 0 !== strpos( $field_args['field'], '_' );
 
 			} );
 
@@ -257,11 +267,7 @@ class Customers extends Component {
 			'post_status' => 'publish',
 		];
 
-		$post_fields = array_filter( $this->get_fields(), function ( $field_args ) {
-
-			return 0 !== strpos( $field_args['field'], '_' );
-
-		} );
+		$post_fields = $this->get_fields( 'post' );
 
 		foreach ( $post_fields as $field_name => $field_args ) {
 
@@ -301,7 +307,7 @@ class Customers extends Component {
 
 		}
 
-		$fields = $this->get_fields( true );
+		$fields = $this->get_fields( 'meta' );
 
 		foreach ( $info as $info_name => $info_value ) {
 

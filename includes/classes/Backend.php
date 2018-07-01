@@ -39,7 +39,7 @@ class Backend extends Component {
 
 		}
 
-		$customer_fields = array_keys( $this->plugin->customers->get_fields( true ) );
+		$customer_fields = array_keys( $this->plugin->customers->get_fields( 'meta' ) );
 		$customer_info   = [];
 
 		foreach ( $customer_fields as $field_name ) {
@@ -82,7 +82,7 @@ class Backend extends Component {
 	 */
 	public function render_customer_meta_box( $post ) {
 
-		$customer_fields = $this->plugin->customers->get_fields( true );
+		$customer_fields = $this->plugin->customers->get_fields( 'meta' );
 
 		foreach ( $customer_fields as $field_name => $field_args ) {
 
